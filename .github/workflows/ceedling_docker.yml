@@ -23,6 +23,8 @@ jobs:
     #  run: docker build -t local < Dockerfile
     #- name: run tests
     #  run: docker run -it -v $PWD:/project local /project/do_test.sh
+    - name: Change permission to script file
+      run: chmod +x do_test.sh
     - name: Do testing on fsm_rebound
       uses: docker://throwtheswitch/madsciencelab:latest
       with:
